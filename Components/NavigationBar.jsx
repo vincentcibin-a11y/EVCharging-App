@@ -23,13 +23,13 @@ const NavigationBar = () => {
                         <ul className="navbar-nav ms-auto">
 
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">
+                                <Link className="nav-link" to="/AddBooking">
                                     Add Booking
                                 </Link>
                             </li>
 
                             <li className="nav-item">
-                                <Link className="nav-link" to="/view">
+                                <Link className="nav-link" to="/ViewBooking">
                                     View Bookings
                                 </Link>
                             </li>
