@@ -26,7 +26,7 @@ const AddBooking = () => {
     const readValues = () => {
         console.log(booking)
 
-        axios.post("http://localhost:5000/addbooking", booking)
+        axios.post("http://localhost:3000/addbooking", booking)
             .then((response) => {
                 if (response.data.status === "success") {
                     alert("Booking Added Successfully")
