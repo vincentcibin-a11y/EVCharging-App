@@ -1,21 +1,25 @@
 import { useState } from 'react'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import AddBooking from '../Components/AddBooking'
+import NavigationBar from '../Components/NavigationBar'
+import AddBooking from '../Components/AddBooking'
+import ViewBooking from '../Components/ViewBooking'
 
 function App() {
-  
+
 
   return (
     <>
-     <BrowserRouter>
-     <Routes>
+ <BrowserRouter>
+ <NavigationBar>
+ <Routes>
+  <Route path="/AddBooking" element={<AddBooking/>}/>
+  <Route path="/ViewBooking" element={<ViewBooking/>}/>
+ </Routes>
+ 
+ </BrowserRouter>
 
-      <Route path="/AddBooking" element={<AddBooking/>}/>
-      <Route path="/ViewBooking" element={<ViewBooking/>}/>
-     </Routes>
-     
-     </BrowserRouter>
     </>
   )
 }
