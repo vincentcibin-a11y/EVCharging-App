@@ -22,23 +22,44 @@ const AddBooking = () => {
     const inputHandler = (event) => {
         setBooking({ ...booking, [event.target.name]: event.target.value })
     }
+const readValues = () => {
 
-    const readValues = () => {
-        console.log(booking)
+    axios.post("http://localhost:3000/addbooking", booking)
+        .then((response) => {
 
-        axios.post("http://localhost:3000/addbooking", booking)
-            .then((response) => {
-                if (response.data.status === "success") {
-                    alert("Booking Added Successfully")
-                } else {
-                    alert("Failed to Add Booking")
-                }
-            })
-            .catch((error) => {
-                console.log(error)
-                alert("Something went wrong")
-            })
-    }
+            if (response.data.status === "success") {
+
+                alert("Booking Added Successfully")
+
+                setBooking({
+                    bookingId: "",
+                    ownerName: "",
+                    email: "",
+                    phone: "",
+                    vehicleRegistrationNumber: "",
+                    vehicleBrand: "",
+                    vehicleModel: "",
+                    batteryCapacity: "",
+                    connectorType: "",
+                    chargingDate: "",
+                    timeSlot: "",
+                    estimatedUnits: "",
+                    chargingBayNumber: ""
+                })
+
+            } else {
+
+                alert("Failed to Add Booking")
+
+            }
+
+        })
+        .catch((error) => {
+            console.log(error)
+            alert("Something went wrong")
+        })
+
+}
 
     return (
         <div>

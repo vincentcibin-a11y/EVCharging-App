@@ -4,16 +4,21 @@ import React, { useEffect, useState } from 'react'
 const ViewBooking = () => {
 
     const [bookingData, setBookingData] = useState([])
-
     const fetchData = () => {
+
         axios.post("http://localhost:3000/viewbooking", {})
             .then((response) => {
+
                 setBookingData(response.data)
+
             })
             .catch((error) => {
+
                 console.log(error)
                 alert("Error fetching data")
+
             })
+
     }
 
     useEffect(() => {
